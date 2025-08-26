@@ -6,6 +6,7 @@
 // The user enters the last number in the sequence.
 
 #include <iostream>
+#include <string>
 
 // FizzBuzz, main()
 // Summary: This application runs on the main function.
@@ -15,7 +16,22 @@ int main(){
     std::cout << "Enter a positive integer: " << std::flush;
     std::cin >> n;
 
-    // Write your code here
+    while(n <= 0) {
+        std::cout << "Enter a positive integer: " << std::flush;
+        std::cin >> n;
+    } 
+    for(int i = 1; i <= n; i++) {
+        std::string resp;
+        if(i % 3 == 0){
+            resp += "Fizz";
+        } if(i % 5 == 0) {
+            resp += "Buzz";
+        } if(resp == "") {
+            resp = std::to_string(i);
+        }
+        std::cout << resp << std::endl;  
+    }
+
     
     std::cout << std::endl << std::flush;
     return 0;

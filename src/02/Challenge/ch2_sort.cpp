@@ -15,16 +15,46 @@
 //           n: The size of the array.
 // Returns: A boolean value: True on success, false otherwise.
 bool sort_array(int *arr, int n){
-
-    // Write your code here
-
-    return false;
+    for(int i = n; i > 0; i--) {
+        for(int j = 1; j < n; j++) {
+            if(arr[j] < arr[j-1]) {
+                int temp = arr[j];
+                arr[j] = arr[j-1];
+                arr[j-1] = temp;
+            }
+        }
+    }
+    return true;
 }
+
+// bool sort_array(int *arr, int n){
+//     if(arr == NULL) {
+//         return false;
+//     }
+//     if(n < 2) {
+//         return true;
+//     }
+
+//     bool sorted = false;
+//     int temp;
+//     while(!sorted) {
+//         sorted = true;
+//         for(int i = 0; i < n - 1; i++) {
+//             if(arr[i] > arr[i+i]) {
+//                 temp = arr[i];
+//                 arr[i] = arr[i+1];
+//                 arr[i+1] = temp;
+//                 sorted = false;
+//             }
+//         }
+//     }
+//     return true;
+// }
 
 // Main function
 int main(){
     // The following array will be treated as an array of length len. 
-    const int len = 7; // Don't exceed the length of the array below!
+    const int len = 10; // Don't exceed the length of the array below!
     int array[] = {2, 9, 4, 3, 5, 1, 6, 8, 0, 7};
 
     // Print the original array
